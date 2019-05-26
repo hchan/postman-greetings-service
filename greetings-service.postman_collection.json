@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "97899a7f-0e7f-4959-9e1a-c13569426079",
+		"name": "greetings-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/greeting",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b395cdb-2498-4b12-b9a8-d2a93142303a",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.content).to.include(\"Spring Boot\")\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/greeting",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"greeting"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/api/greeting",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/greeting",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"greeting"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 26 May 2019 18:19:55 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": \"Hello from Spring Boot, World!\"\n}"
+				}
+			]
+		}
+	]
+}
